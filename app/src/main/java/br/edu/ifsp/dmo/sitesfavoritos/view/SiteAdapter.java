@@ -59,6 +59,10 @@ public class SiteAdapter extends RecyclerView.Adapter<SiteAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(
                 v -> listener.clickSiteItem(position)
         );
+
+        holder.lixeira.setOnClickListener(
+                v -> listener.clickLixeiraSiteItem(position)
+        );
     }
 
     @Override
@@ -71,11 +75,14 @@ public class SiteAdapter extends RecyclerView.Adapter<SiteAdapter.ViewHolder> {
         public TextView apelido;
         public TextView url;
         public ImageView coracao;
+
+        public ImageView lixeira;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             apelido = itemView.findViewById(R.id.textview_apelido);
             url = itemView.findViewById(R.id.textview_url);
             coracao = itemView.findViewById(R.id.img_coracao);
+            lixeira = itemView.findViewById(R.id.img_delete);
         }
     }
 }

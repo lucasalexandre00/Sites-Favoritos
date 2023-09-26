@@ -87,4 +87,10 @@ public class MainActivity extends AppCompatActivity implements SiteItemClick {
         site.setFavorito(!site.isFavorito());
         recyclerView.getAdapter().notifyDataSetChanged();
     }
+
+    @Override
+    public void clickLixeiraSiteItem(int posicao) {
+        datasource.remove(posicao);
+        recyclerView.getAdapter().notifyDataSetChanged();
+    }
 }
